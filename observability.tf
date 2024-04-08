@@ -53,12 +53,12 @@ resource "aws_kms_key" "sns_encryption_key" {
   enable_key_rotation     = true
 }
 
-# variable "your_email" {
-#   type = string
-#   default = "abc@123.com"
-# }
+variable "your_email" {
+  type = string
+  default = ""
+}
 
-# variable "main_region" {
-#   type = string
-#   default = "ap-east-1"
-# }
+variable "main_region" {
+  type = string
+  default = ""
+}
