@@ -11,7 +11,7 @@ Hello world terraform repo (AWS Fargate based), quasi fork of https://github.com
 A basic terraform init/plan/apply should suffice for a local setup. For terraform cloud, create a workspace pointing to your repo, configure aws access and input variables and then trigger a run. The setup should be complete in 5 minutes or so, with the ALB URL given as an output to access the application.
 
 ## App
-The app is a simple GO based web service which outputs the date/time, sunrise, sunset and solar noon info for a given location (this is hardcoded to New York). Two endpoints exist; one is at the root/base URL which performs the aforementioned function, while the other is at /health and simply outputs the current date/time which also serves as a health check for the application.
+The app is a simple GO based web service which outputs the date, sunrise, sunset and solar noon info for the users location (this defaults to New York for time and Cleveland for location). Two endpoints exist; one is at the root/base URL which performs the aforementioned function, while the other is at /health and simply outputs the default date/time which also serves as a health check for the application.
 
 ## Terraform modules
 | Module name      | Domain | Description |
