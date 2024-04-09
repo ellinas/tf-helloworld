@@ -14,12 +14,12 @@ A basic terraform init/plan/apply should suffice for a local setup. For terrafor
 The app is a simple GO based web service which outputs the date/time, sunrise, sunset and solar noon info for a given location (this is hardcoded to New York). Two endpoints exist; one is at the root/base URL which performs the aforementioned function, while the other is at /health and simply outputs the current date/time which also serves as a health check for the application.
 
 ## Terraform modules
-| Module name      | Domain | Description
-| ----------- | ----------- |
-| config.tf      | Setup/config       | Initial config of terraform/aws, and remote (S3) backend
-| ecs.tf   | Infra/compute        | Provisioning and config of the fargate cluster
-| network.tf      | Infra/networking       | Provisioning and config of the network used by the fargate cluster
-| observability.tf   | Infra/observability        | Provisioning and config of a basic cloudwatch alarm/sns topic for the fargate cluster
+| Module name      | Domain | Description |
+| ----------- | ----------- | ----------- |
+| config.tf      | Setup/config       | Initial config of terraform/aws, and remote (S3) backend |
+| ecs.tf   | Infra/compute        | Provisioning and config of the fargate cluster |
+| network.tf      | Infra/networking       | Provisioning and config of the network used by the fargate cluster |
+| observability.tf   | Infra/observability        | Provisioning and config of a basic cloudwatch alarm/sns topic for the fargate cluster |
 
 ## AWS config
 Simple user with admin permissions/policy (AdministratorAccess). Access key details fed in as sensitive variables in the terraform cloud workspace.
