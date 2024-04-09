@@ -151,6 +151,7 @@ resource "aws_alb_listener" "sun_api_http" {
   default_action {
     type             = "forward"
     target_group_arn = aws_lb_target_group.sun_api.arn
+# Alternative config for HTTPS listener, commented out due to lack of certificate setup
 #   default_action {
 #     type = "redirect"
 
@@ -167,6 +168,7 @@ output "alb_url" {
   value = "http://${aws_alb.sun_api.dns_name}"
 }
 
+# Certificate setup, commented out due to lack of domain/DNS records
 # resource "aws_acm_certificate" "sun_api" {
 #   domain_name       = "sun-api.jimmysawczuk.net"
 #   validation_method = "DNS"
@@ -190,6 +192,7 @@ output "alb_url" {
 #   }
 # }
 
+# ECR setup, commented out due to preference of using existing image
 # resource "aws_ecr_repository" "sun_api" {
 #   name = "sun-api"
 # }

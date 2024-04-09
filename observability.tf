@@ -1,3 +1,4 @@
+# Cloudwatch alarm on sun_api target group/load balancer, will send message to alarm topic if < 1 healthy nodes for 60s
 resource "aws_cloudwatch_metric_alarm" "alb_healthyhosts" {
   alarm_name          = "red_alert"
   comparison_operator = "LessThanThreshold"
@@ -16,7 +17,7 @@ resource "aws_cloudwatch_metric_alarm" "alb_healthyhosts" {
   }
 }
 
-# SNS topic to send emails with the Alerts
+# SNS topic to send emails with the Alerts, encryption turned off
 resource "aws_sns_topic" "alarm" {
   name              = "my-alarm-topic"
 #   kms_master_key_id = aws_kms_key.sns_encryption_key.id
@@ -53,6 +54,7 @@ EOF
 #   enable_key_rotation     = true
 # }
 
+# These will be set in terraform cloud
 variable "your_email" {
   type = string
   default = ""
